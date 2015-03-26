@@ -51,10 +51,13 @@ blog_posts = [
 tags = blog_posts.map do |blog_posts|
     blog_posts[:tags]
   end
+# or, tags = tags.flatten.uniq
+# or...
+# tags = blog_posts.map { |post| post[:tags] }.flatten.uniq
 
 # debugging code
-# require 'pry'
-# binding.pry
+# require 'pry'   #puat at beginning of file
+# binding.pry     #
 
 # Because each post has it's own array of tags, you're going to end up with an
 # array of arrays after you've iterated over each post. You will need to
